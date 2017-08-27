@@ -1,6 +1,8 @@
-# currency-exchange-app
+# Currency Exchange App with Vue.js 2
 
-> A Vue2 project that fetches the current foreign exchange rates and displays in a simple SPA (single-page application)
+This is a Vue 2 project that fetches the current foreign exchange rates for a few currencies and displays them in a simple SPA (single-page application).
+
+[LIVE DEMO AVAILABLE](http://edmilsonrocha.me/Currency-Exchange-App/)
 
 ## Build Setup
 
