@@ -7,7 +7,10 @@
                         class="has-text-primary">Edmilson Rocha</b></a> with <a href="https://vuejs.org/" target="_blank"
                         class="has-text-success">Vue.js 2</a> and <span class="has-text-danger">♥</span>
                     <br>
+                    API data provided by the amazing <a href="http://fixer.io/" target="_blank">fixer.io API</a>
+                    <br>
                     The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+                    <br>
                     <br>
                     <i>Psst: try the Konami Code.</i>
                 </p>
