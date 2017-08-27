@@ -13,7 +13,7 @@
                     <tab-list>
                         <tab v-for="(currency, index) in supportedCurrencies" :key="`currency-${index}`"
                              :name="currency" :currency="currency" :selected="index == 0">
-                            <currency-exchange-panel :currency="currency" :supported-currencies="supportedCurrencies"></currency-exchange-panel>
+                            <currency-exchange-panel :currency="currency" :supported-currencies="supportedCurrenciesOrdered"></currency-exchange-panel>
                         </tab>
                     </tab-list>
                 </div>
@@ -42,6 +42,12 @@
         data() {
             return {
                 supportedCurrencies: ['USD', 'AUD', 'BRL', 'CAD', 'GBP', 'JPY'],
+            }
+        },
+
+        computed: {
+            supportedCurrenciesOrdered() {
+                return this.supportedCurrencies.sort();
             }
         },
 

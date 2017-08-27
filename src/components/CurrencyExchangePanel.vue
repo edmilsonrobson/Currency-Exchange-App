@@ -113,6 +113,11 @@
                                         updatedRates[key] = rates[key] * baseAmount;
                                     }
                                 }
+                                const associativeArray = [];
+                                for(let property in updatedRates){
+                                    associativeArray[property] = updatedRates[property];
+                                }
+                                associativeArray.sort();
                                 that.exchangeList = updatedRates;
                             })
                             .catch(error => {
