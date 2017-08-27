@@ -3,8 +3,8 @@
         <div class="field has-addons">
             <div class="control">
                 <label for="amount"></label>
-                <input min="0" max="999999" id="amount" v-model="amount" class="input" type="number"
-                       :placeholder="'Amount in ' + this.currency + ''">
+                <input min="0" max="9007199254740991" id="amount" v-model="amount" class="input" type="number"
+                       :placeholder="this.currency + ' amount...'">
             </div>
             <div class="control">
                 <a @click="fetchExchange(amount)" class="button is-info">
@@ -18,18 +18,30 @@
             </div>
         </div>
 
-        <table v-show="!loading && !broken" class="table is-fullwidth">
-            <thead>
-            <tr>
-                <th v-for="supportedCurrency in otherCurrencies">{{ supportedCurrency }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td v-for="newAmount in exchangeList">{{ newAmount.toFixed(2) }}</td>
-            </tr>
-            </tbody>
-        </table>
+        <div v-show="!broken">
+            <br>
+            <p v-if='this.amount' class="is-size-6">
+                <b>{{ amount }} {{ currency }} is equivalent to...</b>
+            </p>
+            <p v-else class="is-size-6 has-text-danger">
+                <b>Please insert an amount (in {{ currency }})</b>
+            </p>
+            <br>
+        </div>
+        <div v-show="!loading && !broken">
+            <table class="table is-fullwidth">
+                <thead>
+                <tr>
+                    <th v-for="supportedCurrency in otherCurrencies">{{ supportedCurrency }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td v-for="newAmount in exchangeList">{{ newAmount.toFixed(2) }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
         <div v-if="loading && !broken" class="has-text-centered">
             <br>
